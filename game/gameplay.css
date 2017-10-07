@@ -1,0 +1,18 @@
+body
+{
+	background:#333;
+    color: #00b5d9;
+}
+#time_bar{
+	background-color:skyblue;
+}
+#title
+{
+	text-align:center;
+	font-size:20px;
+}
+#timer
+{
+	text-align:center;
+	font-size:50px;
+}
