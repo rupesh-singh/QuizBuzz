@@ -1,0 +1,311 @@
+<html>
+<head>
+<title>QuizBuzz</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+<style type="text/css">
+body {
+   background-image:url("ww.jpg");
+   background-size: 1500px 800px;
+   background-color: #76b852;
+	margin:150px 100px 100px 700px;
+    opacity:0;
+	}
+<!--div#fixedheader {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	color:#CCC;
+	background:#333;
+	Gotham SSm A,Gotham SSm B,Helvetica Neue,Helvetiva,Arial,sans-serif;
+	padding:20px;
+}-->
+div#fixedfooter {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:#ADD8E6;
+    background:white;
+	border: 2px solid green;
+	padding:50px;
+}
+
+h1.sansserif {
+    font-family: Arial, Helvetica, sans-serif;}
+ul.san {
+    font-family: Arial, gadget, sans-serif;}	
+	
+	logo{
+	width:10px;
+	height:10px;
+	padding:15px;
+	}
+	
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+	border-radius:12px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+	border-radius:12px;
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover ,
+.button1.focus
+{
+    border-radius:12px;
+    background-color: #4CAF50;
+    color: white;
+	
+	
+	}	
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 450px;
+  
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size:20px;
+  color: #333;
+  font-family: serif;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 200ms;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+
+
+
+.login-page {
+  width: 400px;
+  padding: 0 0 0;
+  margin: auto;
+}
+
+
+.form {
+  position: relative;
+  background: #FFFFFF;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.form input[type=text], input[type=password]{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 80%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 80%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 15px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form input[type=submit]:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 15px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+	
+	
+	
+	.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+</style>
+
+
+</head>
+
+
+
+
+<body>
+<!--<div id="fixedheader">Top div content</div>-->
+<div class="q">
+<h1 class="sansserif" style="color:white; font-size:50px;">QuizBuzz</h1>
+<ul class="san" style="list-style-type:speare; color:white; font-size:25px">
+  <li>Learn it</li>
+  <li>Quiz it</li>
+  <li>Feel it</li>
+</ul>
+<br>
+<br>
+<br>
+
+</div>
+<a href="#popup1" ><button class="button button1" ><b>Log in</b></button></a>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>LOG IN</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			
+			<div class="login-page">
+                        <div class="form">
+
+			
+<form name="login" action="login.php" method="POST" class="login-form" >
+
+			<input type="text" name="username" placeholder="username">
+            
+			<input type="password" name="password" placeholder="password">
+            
+			<input type="submit"  name="submit" >
+
+
+
+</form>
+<a href="signup.php"><p class="message">create new account</p></a>
+
+</div>
+</div>			
+			
+			</div>
+	</div>
+</div>
+
+
+
+<a href="signup.php" ><button class="button button1"><b>Sign in</b></button></a>
+
+ 
+
+<div id="fixedfooter">
+<?php //include("footer.php"); ?> 
+ <div class="text-right right-block"> 
+                <a href="https://www.facebook.com"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:rupesh.singh@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+<br>
+<div class="text-right right-block" >
+				&copy Copyright 2016 QuizBuzz All Right Reserved
+			</div>
+			
+			
+
+			
+</div>
+<script>
+$(document).ready(function(){
+$("body").animate({ 
+backgroundSize: '+=300px',
+opacity :'1'
+},2500);
+});
+</script>
+</body>
+
+</html>
